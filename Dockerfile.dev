@@ -1,0 +1,47 @@
+# Development Dockerfile
+# docker build -f Dockerfile.dev -t epptest .
+# docker run -p 8022:22 epptest
+FROM docker.m.daocloud.io/ubuntu:22.04
+
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
+ARG COMMIT_SHA=unknown
+ARG BUILD_REF
+
+ENV ALL_PROXY=socks5://10.64.26.1:10808
+ENV HTTP_PROXY=http://10.64.26.1:10809
+ENV HTTPS_PROXY=http://10.64.26.1:10809
+
+# Install SSH server
+RUN apt-get update && \
+    apt-get install -y openssh-server curl && \
+    mkdir /var/run/sshd && \
+    # Set root password
+    echo 'root:root' | chpasswd && \
+    # Permit root login
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# Install Go
+RUN curl -fsSL https://go.dev/dl/go1.24.5.linux-amd64.tar.gz -o go.tar.gz && \
+    rm -rf /usr/local/go && tar -C /usr/local -xzf go.tar.gz && \
+    rm go.tar.gz
+
+# Add Go to PATH
+ENV PATH=$PATH:/usr/local/go/bin
+
+# Expose SSH port
+EXPOSE 22
+
+RUN go install golang.org/x/tools/gopls@latest && \
+    go install honnef.co/go/tools/cmd/staticcheck@latest && \
+    go install github.com/go-delve/delve/cmd/dlv@latest
+
+# Dependencies
+WORKDIR /src
+COPY . ./
+
+RUN go mod download
+
+# Start SSH server and keep container running
+CMD ["/usr/sbin/sshd", "-D"]
