@@ -1,0 +1,75 @@
+===== concurrency=20 =====
+Successful: 160
+Errors:     0
+Duration:   1.33s
+Throughput: 120.28 req/s
+--- TTFT / first response byte ---
+Mean:  157.57ms
+P50:   156.16ms
+P90:   178.63ms
+P99:   220.06ms
+Mean:  157.93ms
+P50:   156.24ms
+P90:   179.74ms
+P99:   220.08ms
+
+===== concurrency=60 =====
+Successful: 480
+Errors:     0
+Duration:   3.61s
+Throughput: 132.79 req/s
+--- TTFT / first response byte ---
+Mean:  425.58ms
+P50:   441.90ms
+P90:   463.16ms
+P99:   481.42ms
+Mean:  425.87ms
+P50:   442.27ms
+P90:   463.37ms
+P99:   481.76ms
+
+===== concurrency=100 =====
+Successful: 800
+Errors:     0
+Duration:   6.15s
+Throughput: 130.03 req/s
+--- TTFT / first response byte ---
+Mean:  723.05ms
+P50:   753.64ms
+P90:   798.38ms
+P99:   822.76ms
+Mean:  723.31ms
+P50:   753.93ms
+P90:   798.75ms
+P99:   823.29ms
+
+===== concurrency=150 =====
+Successful: 1200
+Errors:     0
+Duration:   9.44s
+Throughput: 127.16 req/s
+--- TTFT / first response byte ---
+Mean:  1108.06ms
+P50:   1157.51ms
+P90:   1232.71ms
+P99:   1251.73ms
+Mean:  1108.30ms
+P50:   1157.67ms
+P90:   1232.94ms
+P99:   1251.75ms
+
+===== concurrency=200 =====
+Successful: 1600
+Errors:     0
+Duration:   12.53s
+Throughput: 127.71 req/s
+--- TTFT / first response byte ---
+Mean:  1472.67ms
+P50:   1538.58ms
+P90:   1598.73ms
+P99:   1709.03ms
+Mean:  1472.90ms
+P50:   1538.65ms
+P90:   1598.88ms
+P99:   1709.05ms
+

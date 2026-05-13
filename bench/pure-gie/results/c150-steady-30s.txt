@@ -1,0 +1,127 @@
+=== HTTP Benchmark ===
+url=http://localhost:8080/v1/completions host=bench.local concurrency=150 total=4000 input-chars=220000 body-bytes=220069 stream=true
+
+  progress: 50/4000
+  progress: 100/4000
+  progress: 150/4000
+  progress: 200/4000
+  progress: 250/4000
+  progress: 300/4000
+  progress: 350/4000
+  progress: 400/4000
+  progress: 450/4000
+  progress: 500/4000
+  progress: 550/4000
+  progress: 600/4000
+  progress: 650/4000
+  progress: 700/4000
+  progress: 750/4000
+  progress: 800/4000
+  progress: 850/4000
+  progress: 900/4000
+  progress: 950/4000
+  progress: 1000/4000
+  progress: 1050/4000
+  progress: 1100/4000
+  progress: 1150/4000
+  progress: 1200/4000
+  progress: 1250/4000
+  progress: 1300/4000
+  progress: 1350/4000
+  progress: 1400/4000
+  progress: 1450/4000
+  progress: 1500/4000
+  progress: 1550/4000
+  progress: 1600/4000
+  progress: 1650/4000
+  progress: 1700/4000
+  progress: 1750/4000
+  progress: 1800/4000
+  progress: 1850/4000
+  progress: 1900/4000
+  progress: 1950/4000
+  progress: 2000/4000
+  progress: 2050/4000
+  progress: 2100/4000
+  progress: 2150/4000
+  progress: 2200/4000
+  progress: 2250/4000
+  progress: 2300/4000
+  progress: 2350/4000
+  progress: 2400/4000
+  progress: 2450/4000
+  progress: 2500/4000
+  progress: 2550/4000
+  progress: 2600/4000
+  progress: 2650/4000
+  progress: 2700/4000
+  progress: 2750/4000
+  progress: 2800/4000
+  progress: 2850/4000
+  progress: 2900/4000
+  progress: 2950/4000
+  progress: 3000/4000
+  progress: 3050/4000
+  progress: 3100/4000
+  progress: 3150/4000
+  progress: 3200/4000
+  progress: 3250/4000
+  progress: 3300/4000
+  progress: 3350/4000
+  progress: 3400/4000
+  progress: 3450/4000
+  progress: 3500/4000
+  progress: 3550/4000
+  progress: 3600/4000
+  progress: 3650/4000
+  progress: 3700/4000
+  progress: 3750/4000
+  progress: 3800/4000
+  progress: 3850/4000
+  progress: 3900/4000
+  progress: 3950/4000
+  progress: 4000/4000
+
+=== Results ===
+Successful: 4000
+Errors:     0
+Duration:   31.03s
+Throughput: 128.90 req/s
+
+--- TTFT / first response byte ---
+Mean:  1141.41ms
+P50:   1153.49ms
+P90:   1206.99ms
+P95:   1228.04ms
+P99:   1271.16ms
+Min:   79.03ms
+Max:   1334.07ms
+
+--- Total request latency ---
+Mean:  1141.66ms
+P50:   1153.73ms
+P90:   1207.48ms
+P95:   1228.07ms
+P99:   1272.12ms
+Min:   79.06ms
+Max:   1334.09ms
+
+--- Key EPP Metrics ---
+inference_extension_plugin_duration_seconds_sum{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 0.018251741999999956
+inference_extension_plugin_duration_seconds_count{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 8694
+inference_extension_plugin_duration_seconds_sum{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 0.06156531099999995
+inference_extension_plugin_duration_seconds_count{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 8694
+inference_extension_plugin_duration_seconds_sum{extension_point="ProcessProfilesResults",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 0.003322509000000023
+inference_extension_plugin_duration_seconds_count{extension_point="ProcessProfilesResults",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 8694
+inference_extension_plugin_duration_seconds_sum{extension_point="ProfilePicker",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 0.004088754000000064
+inference_extension_plugin_duration_seconds_count{extension_point="ProfilePicker",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 17388
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="kv-cache-utilization-scorer",plugin_type="kv-cache-utilization-scorer"} 0.004722864999999997
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="kv-cache-utilization-scorer",plugin_type="kv-cache-utilization-scorer"} 8694
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 0.016534914999999883
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 8694
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 0.005552130000000007
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 8694
+inference_extension_scheduler_e2e_duration_seconds_sum 0.23317100699999938
+inference_extension_scheduler_e2e_duration_seconds_count 8694
+inference_objective_request_duration_seconds_sum{model_name="Qwen/Qwen3-32B",target_model_name="Qwen/Qwen3-32B"} 9172.884104373
+inference_objective_request_duration_seconds_count{model_name="Qwen/Qwen3-32B",target_model_name="Qwen/Qwen3-32B"} 8694

@@ -1,0 +1,38 @@
+File: epp
+Build ID: 7c68013662b67c1ce20bf46e4a77012b8993902b
+Type: alloc_space
+Time: 2026-05-13 10:49:40 UTC
+Showing nodes accounting for 20.62GB, 96.21% of 21.43GB total
+Dropped 597 nodes (cum <= 0.11GB)
+Showing top 30 nodes out of 102
+      flat  flat%   sum%        cum   cum%
+    3.39GB 15.82% 15.82%    10.37GB 48.39%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/handlers.(*StreamingServer).Process
+    2.47GB 11.52% 27.34%     2.47GB 11.53%  encoding/json.(*decodeState).literalStore
+    2.24GB 10.46% 37.80%     2.24GB 10.46%  github.com/prometheus/common/expfmt.(*TextParser).readingLabels
+    1.34GB  6.26% 44.06%     1.34GB  6.26%  google.golang.org/protobuf/internal/impl.consumeBytesNoZero
+    1.27GB  5.91% 49.97%     1.27GB  5.91%  compress/flate.(*dictDecoder).init (inline)
+    1.25GB  5.82% 55.79%     1.59GB  7.42%  encoding/json.Marshal
+    1.24GB  5.79% 61.58%     1.34GB  6.28%  github.com/prometheus/common/expfmt.(*TextParser).startLabelName
+    1.24GB  5.77% 67.35%     1.24GB  5.77%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.getUserInputBytes
+    1.02GB  4.77% 72.12%     1.03GB  4.79%  google.golang.org/grpc/internal/mem.(*sizedBufferPool).Get
+    0.92GB  4.31% 76.43%     0.92GB  4.31%  github.com/prometheus/common/expfmt.(*TextParser).readingValue
+    0.85GB  3.98% 80.41%     1.15GB  5.38%  github.com/prometheus/common/expfmt.(*TextParser).readingMetricName
+    0.59GB  2.75% 83.16%     0.59GB  2.75%  bytes.(*Buffer).String (inline)
+    0.59GB  2.74% 85.90%     0.59GB  2.74%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*indexer).Get
+    0.46GB  2.13% 88.03%     0.57GB  2.66%  github.com/prometheus/common/expfmt.(*TextParser).startLabelValue
+    0.34GB  1.57% 89.60%     0.34GB  1.57%  bufio.NewReaderSize (inline)
+    0.30GB  1.38% 90.98%     1.56GB  7.29%  compress/flate.NewReader
+    0.18GB  0.83% 91.81%     0.18GB  0.83%  encoding/json.appendString[go.shape.string]
+    0.17GB  0.79% 92.60%     0.17GB  0.79%  bytes.growSlice
+    0.14GB  0.65% 93.25%     0.14GB  0.65%  go.uber.org/zap/internal/bufferpool.init.NewPool.func1
+    0.13GB   0.6% 93.85%     1.89GB  8.84%  github.com/prometheus/common/expfmt.(*TextParser).startOfLine
+    0.11GB  0.53% 94.38%     0.45GB  2.10%  github.com/prometheus/common/expfmt.(*TextParser).setOrCreateCurrentMF
+    0.10GB  0.46% 94.84%     0.69GB  3.20%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).matchLongestPrefix
+    0.08GB  0.38% 95.22%     0.24GB  1.13%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requesthandling/parsers/openai.(*OpenAIParser).parseStreamResponse (inline)
+    0.07GB  0.34% 95.57%     0.16GB  0.74%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requesthandling/parsers/openai.extractUsageStreaming-range1
+    0.05GB  0.23% 95.80%     2.56GB 11.94%  encoding/json.Unmarshal
+    0.02GB  0.12% 95.91%     1.76GB  8.22%  compress/gzip.NewReader (inline)
+    0.02GB   0.1% 96.02%     2.49GB 11.64%  encoding/json.(*decodeState).object
+    0.02GB 0.073% 96.09%     0.18GB  0.82%  github.com/prometheus/common/expfmt.(*TextParser).startComment
+    0.02GB 0.071% 96.16%     0.20GB  0.95%  github.com/go-logr/zapr.(*zapLogger).WithValues
+    0.01GB 0.053% 96.21%     1.25GB  5.82%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.hashPrompt
