@@ -1,0 +1,347 @@
+goroutine profile: total 248
+60 @ 0x4818ce 0x45e0f7 0x17e697e 0x17e6697 0x17e7845 0x17e73c9 0x1853dfb 0x1854dd7 0x1855dab 0x186f425 0x1889646 0x1caedb2 0x48a041
+#	0x17e697d	google.golang.org/grpc/internal/transport.(*recvBufferReader).readMessageHeader+0x9d				/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/transport.go:177
+#	0x17e6696	google.golang.org/grpc/internal/transport.(*recvBufferReader).ReadMessageHeader+0x76				/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/transport.go:146
+#	0x17e7844	google.golang.org/grpc/internal/transport.(*transportReader).ReadMessageHeader+0x24				/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/transport.go:457
+#	0x17e73c8	google.golang.org/grpc/internal/transport.(*Stream).ReadMessageHeader+0xa8					/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/transport.go:366
+#	0x1853dfa	google.golang.org/grpc.(*parser).recvMsg+0x3a									/go/pkg/mod/google.golang.org/grpc@v1.80.0/rpc_util.go:772
+#	0x1854dd6	google.golang.org/grpc.recvAndDecompress+0x96									/go/pkg/mod/google.golang.org/grpc@v1.80.0/rpc_util.go:931
+#	0x1855daa	google.golang.org/grpc.recv+0xaa										/go/pkg/mod/google.golang.org/grpc@v1.80.0/rpc_util.go:1024
+#	0x186f424	google.golang.org/grpc.(*serverStream).RecvMsg+0x1a4								/go/pkg/mod/google.golang.org/grpc@v1.80.0/stream.go:1823
+#	0x1889645	github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3.(*externalProcessorProcessServer).Recv+0x45	/go/pkg/mod/github.com/envoyproxy/go-control-plane/envoy@v1.37.0/service/ext_proc/v3/external_processor_grpc.pb.go:125
+#	0x1caedb1	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/handlers.(*StreamingServer).Process.func1+0x51		/workspace/pkg/epp/handlers/server.go:208
+
+60 @ 0x4818ce 0x45e0f7 0x1cacccc 0x1889558 0x1860032 0x1861d25 0x185a43f 0x48a041
+#	0x1cacccb	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/handlers.(*StreamingServer).Process+0x7ab			/workspace/pkg/epp/handlers/server.go:259
+#	0x1889557	github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3._ExternalProcessor_Process_Handler+0xd7	/go/pkg/mod/github.com/envoyproxy/go-control-plane/envoy@v1.37.0/service/ext_proc/v3/external_processor_grpc.pb.go:106
+#	0x1860031	google.golang.org/grpc.(*Server).processStreamingRPC+0x1191							/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:1716
+#	0x1861d24	google.golang.org/grpc.(*Server).handleStream+0xb84								/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:1860
+#	0x185a43e	google.golang.org/grpc.(*Server).serveStreams.func2.1+0x7e							/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:1065
+
+6 @ 0x4818ce 0x415373 0x414ef2 0x161e4a5 0x48a041
+#	0x161e4a4	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile+0x44	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:220
+
+4 @ 0x4818ce 0x415373 0x414ed2 0x15137cc 0x48a041
+#	0x15137cb	k8s.io/client-go/tools/cache.(*controller).RunWithContext.func1+0x2b	/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/controller.go:167
+
+4 @ 0x4818ce 0x415373 0x414ed2 0x1525de5 0x152311f 0x113368c 0x48a041
+#	0x1525de4	k8s.io/client-go/tools/cache.(*sharedProcessor).run+0x64						/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/shared_informer.go:891
+#	0x152311e	k8s.io/client-go/tools/cache.(*sharedIndexInformer).RunWithContext.(*Group).StartWithContext.func4+0x1e	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:63
+#	0x113368b	k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1+0x4b						/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:72
+
+4 @ 0x4818ce 0x415373 0x414ed2 0x1542f49 0x154e1d0 0x48a041
+#	0x1542f48	sigs.k8s.io/controller-runtime/pkg/cache/internal.(*Informers).Start+0x48		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/internal/informers.go:243
+#	0x154e1cf	sigs.k8s.io/controller-runtime/pkg/cache.(*multiNamespaceCache).Start.func2+0x4f	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/multi_namespace_cache.go:180
+
+4 @ 0x4818ce 0x415373 0x414ed2 0x162d00c 0x48a041
+#	0x162d00b	sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller[...]).startEventSourcesAndQueueLocked.func1.1+0x2b	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/internal/controller/controller.go:345
+
+4 @ 0x4818ce 0x415373 0x414ed2 0x162d278 0x161e759 0x48a041
+#	0x162d277	sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller[...]).Start+0xf7	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/internal/controller/controller.go:325
+#	0x161e758	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile.func1+0xd8	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:260
+
+4 @ 0x4818ce 0x415373 0x414ef2 0x1526d4e 0x113368c 0x48a041
+#	0x1526d4d	k8s.io/client-go/tools/cache.(*processorListener).run+0x4d	/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/shared_informer.go:1060
+#	0x113368b	k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1+0x4b	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:72
+
+4 @ 0x4818ce 0x45e0f7 0x151b2ed 0x151b725 0x113368c 0x48a041
+#	0x151b2ec	k8s.io/client-go/tools/cache.(*Reflector).startResync+0x12c		/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:460
+#	0x151b724	k8s.io/client-go/tools/cache.(*Reflector).watchWithResync.func2+0x24	/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:490
+#	0x113368b	k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1+0x4b		/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:72
+
+4 @ 0x4818ce 0x45e0f7 0x151edf3 0x151eaaa 0x151bd8e 0x151b666 0x151b072 0x151aaae 0x11310d3 0x1131351 0x11311c5 0x1131066 0x151a8eb 0x15136ff 0x113368c 0x48a041
+#	0x151edf2	k8s.io/client-go/tools/cache.handleAnyWatch+0x2b2						/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:904
+#	0x151eaa9	k8s.io/client-go/tools/cache.handleWatch+0xe9							/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:862
+#	0x151bd8d	k8s.io/client-go/tools/cache.(*Reflector).watch+0x60d						/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:552
+#	0x151b665	k8s.io/client-go/tools/cache.(*Reflector).watchWithResync+0x185					/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:492
+#	0x151b071	k8s.io/client-go/tools/cache.(*Reflector).ListAndWatchWithContext+0x471				/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:447
+#	0x151aaad	k8s.io/client-go/tools/cache.(*Reflector).RunWithContext.func1+0x2d				/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:369
+#	0x11310d2	k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1+0x12					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:233
+#	0x1131350	k8s.io/apimachinery/pkg/util/wait.BackoffUntilWithContext.func1+0x50				/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:255
+#	0x11311c4	k8s.io/apimachinery/pkg/util/wait.BackoffUntilWithContext+0xe4					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:256
+#	0x1131065	k8s.io/apimachinery/pkg/util/wait.BackoffUntil+0x45						/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:233
+#	0x151a8ea	k8s.io/client-go/tools/cache.(*Reflector).RunWithContext+0x22a					/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/reflector.go:368
+#	0x15136fe	k8s.io/client-go/tools/cache.(*controller).RunWithContext.(*Group).StartWithContext.func3+0x1e	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:63
+#	0x113368b	k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1+0x4b					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:72
+
+4 @ 0x4818ce 0x45e0f7 0x1526ac9 0x113368c 0x48a041
+#	0x1526ac8	k8s.io/client-go/tools/cache.(*processorListener).pop+0x128	/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/shared_informer.go:1029
+#	0x113368b	k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1+0x4b	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/wait.go:72
+
+4 @ 0x4818ce 0x45e0f7 0x154e0b5 0x154b08d 0x495fea 0x48a041
+#	0x154e0b4	sigs.k8s.io/controller-runtime/pkg/cache.(*multiNamespaceCache).Start+0x2b4		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/multi_namespace_cache.go:185
+#	0x154b08c	sigs.k8s.io/controller-runtime/pkg/cache.(*delegatingByGVKCache).Start.func1+0x2c	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/delegating_by_gvk_cache.go:85
+#	0x495fe9	sync.(*WaitGroup).Go.func1+0x49								/usr/local/go/src/sync/waitgroup.go:239
+
+4 @ 0x4818ce 0x45e0f7 0x162500a 0x48a041
+#	0x1625009	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).updateUnfinishedWorkLoop+0x89	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:555
+
+4 @ 0x4818ce 0x45e0f7 0x16250db 0x48a041
+#	0x16250da	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).logState+0x9a	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:503
+
+4 @ 0x4818ce 0x45e0f7 0x1625ae5 0x162bc9b 0x162d7a5 0x48a041
+#	0x1625ae4	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).GetWithPriority+0x144	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:436
+#	0x162bc9a	sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller[...]).processNextWorkItem+0x5a	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/internal/controller/controller.go:421
+#	0x162d7a4	sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller[...]).Start.func1.1+0x84		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/internal/controller/controller.go:313
+
+4 @ 0x4818ce 0x45e0f7 0x1625c30 0x48a041
+#	0x1625c2f	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).handleReadyItems+0x6f	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:362
+
+4 @ 0x4818ce 0x45e0f7 0x1626305 0x48a041
+#	0x1626304	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).handleWaitingItems+0xe4	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:315
+
+4 @ 0x4818ce 0x45e0f7 0x1627705 0x48a041
+#	0x1627704	sigs.k8s.io/controller-runtime/pkg/controller/priorityqueue.(*priorityqueue[...]).handleAddBuffer+0x64	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/controller/priorityqueue/priorityqueue.go:174
+
+4 @ 0x4818ce 0x45e0f7 0x48316e 0x50b98a 0x154722f 0x48a041
+#	0x48316d	reflect.rselect+0x3cd								/usr/local/go/src/runtime/select.go:616
+#	0x50b989	reflect.Select+0x5c9								/usr/local/go/src/reflect/value.go:2949
+#	0x154722e	sigs.k8s.io/controller-runtime/pkg/internal/syncs.MergeChans[...].func2+0x4e	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/internal/syncs/syncs.go:34
+
+4 @ 0x4818ce 0x45e0f7 0x62ac98 0x48a041
+#	0x62ac97	context.(*cancelCtx).propagateCancel.func2+0x97	/usr/local/go/src/context/context.go:523
+
+4 @ 0x4818ce 0x45e0f7 0x8e7d05 0x8e7038 0x48a041
+#	0x8e7d04	golang.org/x/net/http2.(*clientStream).writeRequest+0xc84	/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:1559
+#	0x8e7037	golang.org/x/net/http2.(*clientStream).doRequest+0x17		/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:1420
+
+4 @ 0x4818ce 0x483639 0x483619 0x494093 0x1529eab 0x1513b82 0x1131351 0x11311c5 0x1130fcf 0x15135fe 0x15135b6 0x1522f1a 0x1542ea3 0x15433fc 0x495fea 0x48a041
+#	0x483618	sync.runtime_notifyListWait+0x138								/usr/local/go/src/runtime/sema.go:606
+#	0x494092	sync.(*Cond).Wait+0x72										/usr/local/go/src/sync/cond.go:71
+#	0x1529eaa	k8s.io/client-go/tools/cache.(*RealFIFO).PopBatch+0x8a						/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/the_real_fifo.go:279
+#	0x1513b81	k8s.io/client-go/tools/cache.(*controller).processLoop+0x161					/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/controller.go:234
+#	0x1131350	k8s.io/apimachinery/pkg/util/wait.BackoffUntilWithContext.func1+0x50				/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:255
+#	0x11311c4	k8s.io/apimachinery/pkg/util/wait.BackoffUntilWithContext+0xe4					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:256
+#	0x1130fce	k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext+0x8e					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:223
+#	0x15135fd	k8s.io/apimachinery/pkg/util/wait.UntilWithContext+0x41d					/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/wait/backoff.go:172
+#	0x15135b5	k8s.io/client-go/tools/cache.(*controller).RunWithContext+0x3d5					/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/controller.go:199
+#	0x1522f19	k8s.io/client-go/tools/cache.(*sharedIndexInformer).RunWithContext+0x399			/go/pkg/mod/k8s.io/client-go@v0.35.4/tools/cache/shared_informer.go:579
+#	0x1542ea2	sigs.k8s.io/controller-runtime/pkg/cache/internal.(*Cache).Start+0xe2				/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/internal/informers.go:128
+#	0x15433fb	sigs.k8s.io/controller-runtime/pkg/cache/internal.(*Informers).startInformerLocked.func1+0x3b	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/internal/informers.go:260
+#	0x495fe9	sync.(*WaitGroup).Go.func1+0x49									/usr/local/go/src/sync/waitgroup.go:239
+
+3 @ 0x4818ce 0x415373 0x414ef2 0x17a8ea5 0x48a041
+#	0x17a8ea4	google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run+0xe4	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/grpcsync/callback_serializer.go:88
+
+3 @ 0x4818ce 0x483639 0x483619 0x494093 0x8e06db 0x8ed719 0x5c2128 0x5c1d25 0x5c19f5 0x96ce1c 0x114db43 0x114de8b 0x8fa318 0x48a041
+#	0x483618	sync.runtime_notifyListWait+0x138						/usr/local/go/src/runtime/sema.go:606
+#	0x494092	sync.(*Cond).Wait+0x72								/usr/local/go/src/sync/cond.go:71
+#	0x8e06da	golang.org/x/net/http2.(*pipe).Read+0xda					/go/pkg/mod/golang.org/x/net@v0.53.0/http2/pipe.go:76
+#	0x8ed718	golang.org/x/net/http2.transportResponseBody.Read+0x58				/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:2553
+#	0x5c2127	encoding/json.(*Decoder).refill+0x187						/usr/local/go/src/encoding/json/stream.go:167
+#	0x5c1d24	encoding/json.(*Decoder).readValue+0x84						/usr/local/go/src/encoding/json/stream.go:142
+#	0x5c19f4	encoding/json.(*Decoder).Decode+0x74						/usr/local/go/src/encoding/json/stream.go:65
+#	0x96ce1b	k8s.io/apimachinery/pkg/util/framer.(*jsonFrameReader).Read+0x15b		/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/framer/framer.go:151
+#	0x114db42	k8s.io/apimachinery/pkg/runtime/serializer/streaming.(*decoder).Decode+0xa2	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/runtime/serializer/streaming/streaming.go:77
+#	0x114de8a	k8s.io/client-go/rest/watch.(*Decoder).Decode+0x4a				/go/pkg/mod/k8s.io/client-go@v0.35.4/rest/watch/decoder.go:49
+#	0x8fa317	k8s.io/apimachinery/pkg/watch.(*StreamWatcher).receive+0xf7			/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/watch/streamwatcher.go:114
+
+2 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ca8b9 0x4ca8a7 0x674c05 0x684865 0x7a7fbb 0x54c0f8 0x7a819e 0x7a521b 0x7abb25 0x7abb26 0x640e77 0x4c116e 0x8d88a5 0x8d8873 0x8d8f6b 0x17e3a25 0x17dbda5 0x185a1e8 0x18599b6 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84						/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26						/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ca8b8	internal/poll.(*pollDesc).waitRead+0x278					/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ca8a6	internal/poll.(*FD).Read+0x266							/usr/local/go/src/internal/poll/fd_unix.go:165
+#	0x674c04	net.(*netFD).Read+0x24								/usr/local/go/src/net/fd_posix.go:68
+#	0x684864	net.(*conn).Read+0x44								/usr/local/go/src/net/net.go:196
+#	0x7a7fba	crypto/tls.(*atLeastReader).Read+0x3a						/usr/local/go/src/crypto/tls/conn.go:819
+#	0x54c0f7	bytes.(*Buffer).ReadFrom+0x97							/usr/local/go/src/bytes/buffer.go:217
+#	0x7a819d	crypto/tls.(*Conn).readFromUntil+0xdd						/usr/local/go/src/crypto/tls/conn.go:841
+#	0x7a521a	crypto/tls.(*Conn).readRecordOrCCS+0x3da					/usr/local/go/src/crypto/tls/conn.go:630
+#	0x7abb24	crypto/tls.(*Conn).readRecord+0x144						/usr/local/go/src/crypto/tls/conn.go:592
+#	0x7abb25	crypto/tls.(*Conn).Read+0x145							/usr/local/go/src/crypto/tls/conn.go:1397
+#	0x640e76	bufio.(*Reader).Read+0x196							/usr/local/go/src/bufio/bufio.go:245
+#	0x4c116d	io.ReadAtLeast+0x8d								/usr/local/go/src/io/io.go:335
+#	0x8d88a4	io.ReadFull+0x64								/usr/local/go/src/io/io.go:354
+#	0x8d8872	golang.org/x/net/http2.readFrameHeader+0x32					/go/pkg/mod/golang.org/x/net@v0.53.0/http2/frame.go:250
+#	0x8d8f6a	golang.org/x/net/http2.(*Framer).ReadFrameHeader+0x6a				/go/pkg/mod/golang.org/x/net@v0.53.0/http2/frame.go:513
+#	0x17e3a24	google.golang.org/grpc/internal/transport.(*framer).readFrame+0x44		/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/http_util.go:480
+#	0x17dbda4	google.golang.org/grpc/internal/transport.(*http2Server).HandleStreams+0x104	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/http2_server.go:638
+#	0x185a1e7	google.golang.org/grpc.(*Server).serveStreams+0x367				/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:1059
+#	0x18599b5	google.golang.org/grpc.(*Server).handleRawConn.func1+0x55			/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:993
+
+2 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ca8b9 0x4ca8a7 0x674c05 0x684865 0x88d847 0x640943 0x640a73 0x88e352 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ca8b8	internal/poll.(*pollDesc).waitRead+0x278	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ca8a6	internal/poll.(*FD).Read+0x266			/usr/local/go/src/internal/poll/fd_unix.go:165
+#	0x674c04	net.(*netFD).Read+0x24				/usr/local/go/src/net/fd_posix.go:68
+#	0x684864	net.(*conn).Read+0x44				/usr/local/go/src/net/net.go:196
+#	0x88d846	net/http.(*persistConn).Read+0x46		/usr/local/go/src/net/http/transport.go:2125
+#	0x640942	bufio.(*Reader).fill+0x102			/usr/local/go/src/bufio/bufio.go:113
+#	0x640a72	bufio.(*Reader).Peek+0x52			/usr/local/go/src/bufio/bufio.go:152
+#	0x88e351	net/http.(*persistConn).readLoop+0x171		/usr/local/go/src/net/http/transport.go:2278
+
+2 @ 0x4818ce 0x45e0f7 0x17c1da8 0x17c2598 0x17d911c 0x48a041
+#	0x17c1da7	google.golang.org/grpc/internal/transport.(*controlBuffer).get+0x107	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/controlbuf.go:420
+#	0x17c2597	google.golang.org/grpc/internal/transport.(*loopyWriter).run+0x77	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/controlbuf.go:597
+#	0x17d911b	google.golang.org/grpc/internal/transport.NewServerTransport.func3+0xdb	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/http2_server.go:342
+
+2 @ 0x4818ce 0x45e0f7 0x17e068a 0x48a041
+#	0x17e0689	google.golang.org/grpc/internal/transport.(*http2Server).keepalive+0x1e9	/go/pkg/mod/google.golang.org/grpc@v1.80.0/internal/transport/http2_server.go:1203
+
+2 @ 0x4818ce 0x45e0f7 0x19179e5 0x48a041
+#	0x19179e4	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/datalayer.(*Collector).run+0x264	/workspace/pkg/epp/datalayer/collector.go:140
+
+2 @ 0x4818ce 0x45e0f7 0x19cba14 0x19ca99c 0x495fea 0x48a041
+#	0x19cba13	go.opentelemetry.io/otel/sdk/trace.(*batchSpanProcessor).processQueue+0x113	/go/pkg/mod/go.opentelemetry.io/otel/sdk@v1.43.0/trace/batch_span_processor.go:325
+#	0x19ca99b	go.opentelemetry.io/otel/sdk/trace.NewBatchSpanProcessor.func2+0x1b		/go/pkg/mod/go.opentelemetry.io/otel/sdk@v1.43.0/trace/batch_span_processor.go:127
+#	0x495fe9	sync.(*WaitGroup).Go.func1+0x49							/usr/local/go/src/sync/waitgroup.go:239
+
+2 @ 0x4818ce 0x45e0f7 0x88fd67 0x48a041
+#	0x88fd66	net/http.(*persistConn).writeLoop+0xe6	/usr/local/go/src/net/http/transport.go:2600
+
+1 @ 0x41adc9 0x483f09 0x1678f73 0x48a041
+#	0x483f08	os/signal.signal_recv+0x28	/usr/local/go/src/runtime/sigqueue.go:152
+#	0x1678f72	os/signal.loop+0x12		/usr/local/go/src/os/signal/signal_unix.go:23
+
+1 @ 0x440011 0x48069d 0x15684f1 0x1568305 0x156516b 0x15805ea 0x875f07 0x89488e 0x872125 0x48a041
+#	0x15684f0	runtime/pprof.writeRuntimeProfile+0xb0	/usr/local/go/src/runtime/pprof/pprof.go:788
+#	0x1568304	runtime/pprof.writeGoroutine+0x44	/usr/local/go/src/runtime/pprof/pprof.go:747
+#	0x156516a	runtime/pprof.(*Profile).WriteTo+0x14a	/usr/local/go/src/runtime/pprof/pprof.go:371
+#	0x15805e9	net/http/pprof.handler.ServeHTTP+0x529	/usr/local/go/src/net/http/pprof/pprof.go:272
+#	0x875f06	net/http.(*ServeMux).ServeHTTP+0x1c6	/usr/local/go/src/net/http/server.go:2861
+#	0x89488d	net/http.serverHandler.ServeHTTP+0x8d	/usr/local/go/src/net/http/server.go:3340
+#	0x872124	net/http.(*conn).serve+0x664		/usr/local/go/src/net/http/server.go:2109
+
+1 @ 0x4818ce 0x415373 0x414ed2 0x1542f49 0x154b08d 0x495fea 0x48a041
+#	0x1542f48	sigs.k8s.io/controller-runtime/pkg/cache/internal.(*Informers).Start+0x48		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/internal/informers.go:243
+#	0x154b08c	sigs.k8s.io/controller-runtime/pkg/cache.(*delegatingByGVKCache).Start.func1+0x2c	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/delegating_by_gvk_cache.go:85
+#	0x495fe9	sync.(*WaitGroup).Go.func1+0x49								/usr/local/go/src/sync/waitgroup.go:239
+
+1 @ 0x4818ce 0x415373 0x414ed2 0x1600dc5 0x48a041
+#	0x1600dc4	sigs.k8s.io/controller-runtime/pkg/metrics/server.(*defaultServer).Start.func1+0x44	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/metrics/server/server.go:253
+
+1 @ 0x4818ce 0x415373 0x414ed2 0x16791c7 0x48a041
+#	0x16791c6	sigs.k8s.io/controller-runtime/pkg/manager/signals.SetupSignalHandler.func1+0x26	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/signals/signal.go:38
+
+1 @ 0x4818ce 0x415373 0x414ed2 0x1c7cf1f 0x48a041
+#	0x1c7cf1e	github.com/llm-d/llm-d-inference-scheduler/pkg/common/observability/tracing.InitTracing.func1+0x5e	/workspace/pkg/common/observability/tracing/telemetry.go:103
+
+1 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ca8b9 0x4ca8a7 0x674c05 0x684865 0x7a7fbb 0x54c0f8 0x7a819e 0x7a521b 0x7abb25 0x7abb26 0x640e77 0x4c116e 0x8d88a5 0x8d8873 0x8d8f6b 0x8d96d8 0x8eb84a 0x8eabd2 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84			/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26			/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ca8b8	internal/poll.(*pollDesc).waitRead+0x278		/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ca8a6	internal/poll.(*FD).Read+0x266				/usr/local/go/src/internal/poll/fd_unix.go:165
+#	0x674c04	net.(*netFD).Read+0x24					/usr/local/go/src/net/fd_posix.go:68
+#	0x684864	net.(*conn).Read+0x44					/usr/local/go/src/net/net.go:196
+#	0x7a7fba	crypto/tls.(*atLeastReader).Read+0x3a			/usr/local/go/src/crypto/tls/conn.go:819
+#	0x54c0f7	bytes.(*Buffer).ReadFrom+0x97				/usr/local/go/src/bytes/buffer.go:217
+#	0x7a819d	crypto/tls.(*Conn).readFromUntil+0xdd			/usr/local/go/src/crypto/tls/conn.go:841
+#	0x7a521a	crypto/tls.(*Conn).readRecordOrCCS+0x3da		/usr/local/go/src/crypto/tls/conn.go:630
+#	0x7abb24	crypto/tls.(*Conn).readRecord+0x144			/usr/local/go/src/crypto/tls/conn.go:592
+#	0x7abb25	crypto/tls.(*Conn).Read+0x145				/usr/local/go/src/crypto/tls/conn.go:1397
+#	0x640e76	bufio.(*Reader).Read+0x196				/usr/local/go/src/bufio/bufio.go:245
+#	0x4c116d	io.ReadAtLeast+0x8d					/usr/local/go/src/io/io.go:335
+#	0x8d88a4	io.ReadFull+0x64					/usr/local/go/src/io/io.go:354
+#	0x8d8872	golang.org/x/net/http2.readFrameHeader+0x32		/go/pkg/mod/golang.org/x/net@v0.53.0/http2/frame.go:250
+#	0x8d8f6a	golang.org/x/net/http2.(*Framer).ReadFrameHeader+0x6a	/go/pkg/mod/golang.org/x/net@v0.53.0/http2/frame.go:513
+#	0x8d96d7	golang.org/x/net/http2.(*Framer).ReadFrame+0x17		/go/pkg/mod/golang.org/x/net@v0.53.0/http2/frame.go:572
+#	0x8eb849	golang.org/x/net/http2.(*clientConnReadLoop).run+0xc9	/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:2251
+#	0x8eabd1	golang.org/x/net/http2.(*ClientConn).readLoop+0x51	/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:2120
+
+1 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ca8b9 0x4ca8a7 0x674c05 0x684865 0x86ca34 0x640943 0x640a73 0x872285 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ca8b8	internal/poll.(*pollDesc).waitRead+0x278	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ca8a6	internal/poll.(*FD).Read+0x266			/usr/local/go/src/internal/poll/fd_unix.go:165
+#	0x674c04	net.(*netFD).Read+0x24				/usr/local/go/src/net/fd_posix.go:68
+#	0x684864	net.(*conn).Read+0x44				/usr/local/go/src/net/net.go:196
+#	0x86ca33	net/http.(*connReader).Read+0x153		/usr/local/go/src/net/http/server.go:812
+#	0x640942	bufio.(*Reader).fill+0x102			/usr/local/go/src/bufio/bufio.go:113
+#	0x640a72	bufio.(*Reader).Peek+0x52			/usr/local/go/src/bufio/bufio.go:152
+#	0x872284	net/http.(*conn).serve+0x7c4			/usr/local/go/src/net/http/server.go:2145
+
+1 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ce9ec 0x4ce9da 0x676aa9 0x68dd1b 0x68cef0 0x1858f69 0x1c74f85 0x161bb46 0x1eef52e 0x161bb46 0x161e759 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84												/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26												/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ce9eb	internal/poll.(*pollDesc).waitRead+0x28b											/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ce9d9	internal/poll.(*FD).Accept+0x279												/usr/local/go/src/internal/poll/fd_unix.go:613
+#	0x676aa8	net.(*netFD).accept+0x28													/usr/local/go/src/net/fd_unix.go:161
+#	0x68dd1a	net.(*TCPListener).accept+0x1a													/usr/local/go/src/net/tcpsock_posix.go:159
+#	0x68ceef	net.(*TCPListener).Accept+0x2f													/usr/local/go/src/net/tcpsock.go:380
+#	0x1858f68	google.golang.org/grpc.(*Server).Serve+0x468											/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:921
+#	0x1c74f84	github.com/llm-d/llm-d-inference-scheduler/internal/runnable.GRPCServer.func1+0x3c4						/workspace/internal/runnable/grpc.go:60
+#	0x161bb45	sigs.k8s.io/controller-runtime/pkg/manager.RunnableFunc.Start+0x25								/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/manager.go:319
+#	0x1eef52d	github.com/llm-d/llm-d-inference-scheduler/cmd/epp/runner.registerExtProcServer.(*ExtProcServerRunner).AsRunnable.func1+0x8ad	/workspace/pkg/epp/server/runserver.go:196
+#	0x161bb45	sigs.k8s.io/controller-runtime/pkg/manager.RunnableFunc.Start+0x25								/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/manager.go:319
+#	0x161e758	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile.func1+0xd8						/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:260
+
+1 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ce9ec 0x4ce9da 0x676aa9 0x68dd1b 0x68cef0 0x1858f69 0x1eefd05 0x161bb46 0x161e759 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84									/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26									/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ce9eb	internal/poll.(*pollDesc).waitRead+0x28b								/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ce9d9	internal/poll.(*FD).Accept+0x279									/usr/local/go/src/internal/poll/fd_unix.go:613
+#	0x676aa8	net.(*netFD).accept+0x28										/usr/local/go/src/net/fd_unix.go:161
+#	0x68dd1a	net.(*TCPListener).accept+0x1a										/usr/local/go/src/net/tcpsock_posix.go:159
+#	0x68ceef	net.(*TCPListener).Accept+0x2f										/usr/local/go/src/net/tcpsock.go:380
+#	0x1858f68	google.golang.org/grpc.(*Server).Serve+0x468								/go/pkg/mod/google.golang.org/grpc@v1.80.0/server.go:921
+#	0x1eefd04	github.com/llm-d/llm-d-inference-scheduler/cmd/epp/runner.registerHealthServer.GRPCServer.func1+0x344	/workspace/internal/runnable/grpc.go:60
+#	0x161bb45	sigs.k8s.io/controller-runtime/pkg/manager.RunnableFunc.Start+0x25					/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/manager.go:319
+#	0x161e758	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile.func1+0xd8			/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:260
+
+1 @ 0x4818ce 0x443a37 0x480aa5 0x4c95c7 0x4ce9ec 0x4ce9da 0x676aa9 0x68dd1b 0x68cef0 0x877a0c 0x1600c8b 0x161e759 0x48a041
+#	0x480aa4	internal/poll.runtime_pollWait+0x84							/usr/local/go/src/runtime/netpoll.go:351
+#	0x4c95c6	internal/poll.(*pollDesc).wait+0x26							/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4ce9eb	internal/poll.(*pollDesc).waitRead+0x28b						/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4ce9d9	internal/poll.(*FD).Accept+0x279							/usr/local/go/src/internal/poll/fd_unix.go:613
+#	0x676aa8	net.(*netFD).accept+0x28								/usr/local/go/src/net/fd_unix.go:161
+#	0x68dd1a	net.(*TCPListener).accept+0x1a								/usr/local/go/src/net/tcpsock_posix.go:159
+#	0x68ceef	net.(*TCPListener).Accept+0x2f								/usr/local/go/src/net/tcpsock.go:380
+#	0x877a0b	net/http.(*Server).Serve+0x30b								/usr/local/go/src/net/http/server.go:3463
+#	0x1600c8a	sigs.k8s.io/controller-runtime/pkg/metrics/server.(*defaultServer).Start+0x86a		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/metrics/server/server.go:265
+#	0x161e758	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile.func1+0xd8	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:260
+
+1 @ 0x4818ce 0x45e0f7 0x154afdf 0x15def8a 0x161e759 0x48a041
+#	0x154afde	sigs.k8s.io/controller-runtime/pkg/cache.(*delegatingByGVKCache).Start+0x3be		/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cache/delegating_by_gvk_cache.go:91
+#	0x15def89	sigs.k8s.io/controller-runtime/pkg/cluster.(*cluster).Start+0x69			/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/cluster/internal.go:109
+#	0x161e758	sigs.k8s.io/controller-runtime/pkg/manager.(*runnableGroup).reconcile.func1+0xd8	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/runnable_group.go:260
+
+1 @ 0x4818ce 0x45e0f7 0x161a73a 0x1eea9db 0x21ff445 0x21ff193 0x44b13d 0x48a041
+#	0x161a739	sigs.k8s.io/controller-runtime/pkg/manager.(*controllerManager).Start+0xb59	/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.23.3/pkg/manager/internal.go:487
+#	0x1eea9da	github.com/llm-d/llm-d-inference-scheduler/cmd/epp/runner.(*Runner).Run+0x7fa	/workspace/cmd/epp/runner/runner.go:229
+#	0x21ff444	main.run+0x284									/workspace/cmd/epp/main.go:67
+#	0x21ff192	main.main+0x12									/workspace/cmd/epp/main.go:39
+#	0x44b13c	runtime.main+0x29c								/usr/local/go/src/runtime/proc.go:285
+
+1 @ 0x4818ce 0x45e0f7 0x18d2b59 0x48a041
+#	0x18d2b58	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/interface/plugin.(*PluginState).cleanup+0xd8	/workspace/pkg/epp/framework/interface/plugin/plugin_state.go:107
+
+1 @ 0x4818ce 0x45e0f7 0x1c75191 0x48a041
+#	0x1c75190	github.com/llm-d/llm-d-inference-scheduler/internal/runnable.GRPCServer.func1.1+0x90	/workspace/internal/runnable/grpc.go:51
+
+1 @ 0x4818ce 0x45e0f7 0x1d4731b 0x48a041
+#	0x1d4731a	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*indexer).reportLRUSize+0xda	/workspace/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix/indexer.go:122
+
+1 @ 0x4818ce 0x45e0f7 0x1d4851d 0x48a041
+#	0x1d4851c	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).CleanUpInactivePods+0xfc	/workspace/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix/plugin.go:104
+
+1 @ 0x4818ce 0x45e0f7 0x1ee520f 0x48a041
+#	0x1ee520e	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/datalayer/logger.runPrometheusRefresher+0x12e	/workspace/pkg/epp/datalayer/logger/logger.go:53
+
+1 @ 0x4818ce 0x45e0f7 0x1ee5476 0x48a041
+#	0x1ee5475	github.com/llm-d/llm-d-inference-scheduler/pkg/epp/datalayer/logger.runDebugLogger+0x135	/workspace/pkg/epp/datalayer/logger/logger.go:68
+
+1 @ 0x4818ce 0x45e0f7 0x1eefef1 0x48a041
+#	0x1eefef0	github.com/llm-d/llm-d-inference-scheduler/cmd/epp/runner.registerHealthServer.GRPCServer.func1.1+0x90	/workspace/internal/runnable/grpc.go:51
+
+1 @ 0x4818ce 0x483639 0x483619 0x494093 0x8e06db 0x8ed719 0x4c116e 0x96ca7f 0x114db43 0x114de8b 0x8fa318 0x48a041
+#	0x483618	sync.runtime_notifyListWait+0x138						/usr/local/go/src/runtime/sema.go:606
+#	0x494092	sync.(*Cond).Wait+0x72								/usr/local/go/src/sync/cond.go:71
+#	0x8e06da	golang.org/x/net/http2.(*pipe).Read+0xda					/go/pkg/mod/golang.org/x/net@v0.53.0/http2/pipe.go:76
+#	0x8ed718	golang.org/x/net/http2.transportResponseBody.Read+0x58				/go/pkg/mod/golang.org/x/net@v0.53.0/http2/transport.go:2553
+#	0x4c116d	io.ReadAtLeast+0x8d								/usr/local/go/src/io/io.go:335
+#	0x96ca7e	k8s.io/apimachinery/pkg/util/framer.(*lengthDelimitedFrameReader).Read+0x7e	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/util/framer/framer.go:76
+#	0x114db42	k8s.io/apimachinery/pkg/runtime/serializer/streaming.(*decoder).Decode+0xa2	/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/runtime/serializer/streaming/streaming.go:77
+#	0x114de8a	k8s.io/client-go/rest/watch.(*Decoder).Decode+0x4a				/go/pkg/mod/k8s.io/client-go@v0.35.4/rest/watch/decoder.go:49
+#	0x8fa317	k8s.io/apimachinery/pkg/watch.(*StreamWatcher).receive+0xf7			/go/pkg/mod/k8s.io/apimachinery@v0.35.4/pkg/watch/streamwatcher.go:114
+
+1 @ 0x4a7e65 0x4a61b8 0x4ca8ee 0x4ca8d6 0x4ca771 0x674c05 0x684865 0x86c5b3 0x48a041
+#	0x4a7e64	syscall.Syscall+0x24				/usr/local/go/src/syscall/syscall_linux.go:74
+#	0x4a61b7	syscall.read+0x37				/usr/local/go/src/syscall/zsyscall_linux_amd64.go:736
+#	0x4ca8ed	syscall.Read+0x2ad				/usr/local/go/src/syscall/syscall_unix.go:183
+#	0x4ca8d5	internal/poll.ignoringEINTRIO+0x295		/usr/local/go/src/internal/poll/fd_unix.go:738
+#	0x4ca770	internal/poll.(*FD).Read+0x130			/usr/local/go/src/internal/poll/fd_unix.go:161
+#	0x674c04	net.(*netFD).Read+0x24				/usr/local/go/src/net/fd_posix.go:68
+#	0x684864	net.(*conn).Read+0x44				/usr/local/go/src/net/net.go:196
+#	0x86c5b2	net/http.(*connReader).backgroundRead+0x32	/usr/local/go/src/net/http/server.go:702
+

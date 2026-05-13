@@ -1,0 +1,48 @@
+File: epp
+Build ID: 3a1a7c40ecbd67f5a3eb7d52a629d60cc74b8cb2
+Type: alloc_space
+Time: 2026-05-13 08:15:32 UTC
+Showing nodes accounting for 5682.22MB, 95.26% of 5965MB total
+Dropped 508 nodes (cum <= 29.82MB)
+Showing top 40 nodes out of 111
+      flat  flat%   sum%        cum   cum%
+  864.80MB 14.50% 14.50%  2762.42MB 46.31%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/handlers.(*StreamingServer).Process
+  683.95MB 11.47% 25.96%   683.95MB 11.47%  encoding/json.(*decodeState).literalStore
+  552.78MB  9.27% 35.23%   552.78MB  9.27%  google.golang.org/protobuf/internal/impl.consumeBytesNoZero
+  530.95MB  8.90% 44.13%   531.45MB  8.91%  google.golang.org/grpc/internal/mem.(*sizedBufferPool).Get
+  498.61MB  8.36% 52.49%   498.61MB  8.36%  github.com/prometheus/common/expfmt.(*TextParser).readingLabels
+  355.12MB  5.95% 58.44%   497.08MB  8.33%  encoding/json.Marshal
+  340.75MB  5.71% 64.16%   340.75MB  5.71%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.getUserInputBytes
+  291.51MB  4.89% 69.04%   320.01MB  5.36%  github.com/prometheus/common/expfmt.(*TextParser).startLabelName
+  253.25MB  4.25% 73.29%   253.25MB  4.25%  compress/flate.(*dictDecoder).init (inline)
+  230.32MB  3.86% 77.15%   230.32MB  3.86%  encoding/json.unquote (inline)
+  207.52MB  3.48% 80.63%   207.52MB  3.48%  github.com/prometheus/common/expfmt.(*TextParser).readingValue
+  189.02MB  3.17% 83.80%   253.02MB  4.24%  github.com/prometheus/common/expfmt.(*TextParser).readingMetricName
+  136.50MB  2.29% 86.09%   136.50MB  2.29%  bytes.(*Buffer).String (inline)
+   95.50MB  1.60% 87.69%   120.50MB  2.02%  github.com/prometheus/common/expfmt.(*TextParser).startLabelValue
+   78.33MB  1.31% 89.00%    78.33MB  1.31%  bufio.NewReaderSize (inline)
+   78.02MB  1.31% 90.31%    78.02MB  1.31%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*indexer).Get
+   77.83MB  1.30% 91.61%    77.83MB  1.30%  encoding/json.appendString[go.shape.string]
+   73.77MB  1.24% 92.85%   327.02MB  5.48%  compress/flate.NewReader
+   64.64MB  1.08% 93.93%    64.64MB  1.08%  bytes.growSlice
+   25.51MB  0.43% 94.36%    98.01MB  1.64%  github.com/prometheus/common/expfmt.(*TextParser).setOrCreateCurrentMF
+   16.50MB  0.28% 94.64%   390.69MB  6.55%  github.com/prometheus/common/expfmt.(*TextParser).startOfLine
+       9MB  0.15% 94.79%    87.02MB  1.46%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).matchLongestPrefix
+       6MB   0.1% 94.89%   151.96MB  2.55%  encoding/json.mapEncoder.encode
+    4.50MB 0.075% 94.97%    40.51MB  0.68%  github.com/prometheus/common/expfmt.(*TextParser).startComment
+       4MB 0.067% 95.03%   373.19MB  6.26%  compress/gzip.NewReader (inline)
+       2MB 0.034% 95.07%   344.75MB  5.78%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.hashPrompt
+       2MB 0.034% 95.10%    34.48MB  0.58%  google.golang.org/grpc/internal/transport.(*framer).readDataFrame
+    1.50MB 0.025% 95.13%    36.63MB  0.61%  github.com/prometheus/common/expfmt.(*TextParser).reset
+       1MB 0.017% 95.14%  1889.50MB 31.68%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/datalayer/source/metrics.parseMetrics
+       1MB 0.017% 95.16%   917.28MB 15.38%  encoding/json.Unmarshal
+       1MB 0.017% 95.18%   344.70MB  5.78%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requesthandling/parsers/openai.extractRequestBody
+       1MB 0.017% 95.19%   364.72MB  6.11%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/handlers.(*RequestContext).updateStateAndSendIfNeeded
+       1MB 0.017% 95.21%    57.02MB  0.96%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/scheduling.(*Scheduler).Schedule
+    0.50MB 0.0084% 95.22%  2762.92MB 46.32%  google.golang.org/grpc.(*Server).processStreamingRPC
+    0.50MB 0.0084% 95.23%   577.11MB  9.67%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/requestcontrol.(*Director).HandleRequest
+    0.50MB 0.0084% 95.23%   709.54MB 11.90%  github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3.(*externalProcessorProcessServer).Recv
+    0.50MB 0.0084% 95.24%    65.14MB  1.09%  bytes.(*Buffer).grow
+    0.50MB 0.0084% 95.25%    30.52MB  0.51%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/datalayer/extractor/metrics.(*Extractor).Extract
+    0.50MB 0.0084% 95.26%   433.28MB  7.26%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).PrepareRequestData
+         0     0% 95.26%   374.19MB  6.27%  bufio.(*Reader).ReadByte
