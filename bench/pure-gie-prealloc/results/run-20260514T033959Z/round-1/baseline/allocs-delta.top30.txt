@@ -1,0 +1,38 @@
+File: epp
+Build ID: e02bcd3fa9f6ff386f49b456514932ad5818a7f9
+Type: alloc_space
+Time: 2026-05-14 03:40:13 UTC
+Showing nodes accounting for 4267.52MB, 70.94% of 6015.89MB total
+Dropped 271 nodes (cum <= 30.08MB)
+Showing top 30 nodes out of 58
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%  4223.37MB 70.20%  google.golang.org/grpc.(*Server).handleStream
+    2.50MB 0.042% 0.042%  4223.37MB 70.20%  google.golang.org/grpc.(*Server).processStreamingRPC
+         0     0% 0.042%  4223.37MB 70.20%  google.golang.org/grpc.(*Server).serveStreams.func2.1
+         0     0% 0.042%  4219.87MB 70.15%  github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3._ExternalProcessor_Process_Handler
+ 1813.54MB 30.15% 30.19%  4219.87MB 70.15%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/handlers.(*StreamingServer).Process
+       2MB 0.033% 30.22%  1191.73MB 19.81%  encoding/json.Unmarshal
+         0     0% 30.22%  1190.23MB 19.78%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requesthandling/parsers/openai.(*OpenAIParser).ParseRequest
+    0.50MB 0.0083% 30.23%  1188.73MB 19.76%  encoding/json.(*decodeState).object
+         0     0% 30.23%  1188.73MB 19.76%  encoding/json.(*decodeState).unmarshal
+         0     0% 30.23%  1188.73MB 19.76%  encoding/json.(*decodeState).value
+ 1187.73MB 19.74% 49.97%  1188.23MB 19.75%  encoding/json.(*decodeState).literalStore
+         0     0% 49.97%   956.73MB 15.90%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).PrepareRequestData
+         0     0% 49.97%   956.73MB 15.90%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/requestcontrol.executePluginsAsDAG
+         0     0% 49.97%   956.73MB 15.90%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/requestcontrol.prepareDataPluginsWithTimeout.func1
+       2MB 0.033% 50.01%   810.88MB 13.48%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/requestcontrol.(*Director).HandleRequest
+  619.60MB 10.30% 60.30%   771.37MB 12.82%  encoding/json.Marshal
+         0     0% 60.30%   771.37MB 12.82%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/requestcontrol.(*Director).repackage
+    3.50MB 0.058% 60.36%   765.03MB 12.72%  github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3.(*externalProcessorProcessServer).Recv
+         0     0% 60.36%   765.03MB 12.72%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/handlers.(*StreamingServer).Process.func1
+         0     0% 60.36%   761.52MB 12.66%  google.golang.org/grpc.(*serverStream).RecvMsg
+         0     0% 60.36%   761.52MB 12.66%  google.golang.org/grpc.recv
+         0     0% 60.36%   757.02MB 12.58%  google.golang.org/grpc/encoding/proto.(*codecV2).Unmarshal
+    5.51MB 0.092% 60.45%   636.15MB 10.57%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.hashPrompt
+  630.64MB 10.48% 70.94%   630.64MB 10.48%  sigs.k8s.io/gateway-api-inference-extension/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.getUserInputBytes
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/internal/impl.(*MessageInfo).unmarshal
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/internal/impl.(*MessageInfo).unmarshalPointer
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/internal/impl.(*MessageInfo).unmarshalPointerEager
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/internal/impl.consumeMessageInfo
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/proto.Unmarshal
+         0     0% 70.94%   609.33MB 10.13%  google.golang.org/protobuf/proto.UnmarshalOptions.unmarshal

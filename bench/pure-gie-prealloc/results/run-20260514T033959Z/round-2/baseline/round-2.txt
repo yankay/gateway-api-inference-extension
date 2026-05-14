@@ -1,0 +1,77 @@
+=== HTTP Benchmark ===
+url=http://localhost:36775/v1/completions host=bench.local concurrency=1200 total=1500 input-chars=220000 body-bytes=220069 stream=true
+
+  progress: 50/1500
+  progress: 100/1500
+  progress: 150/1500
+  progress: 200/1500
+  progress: 250/1500
+  progress: 300/1500
+  progress: 350/1500
+  progress: 400/1500
+  progress: 450/1500
+  progress: 500/1500
+  progress: 550/1500
+  progress: 600/1500
+  progress: 650/1500
+  progress: 700/1500
+  progress: 750/1500
+  progress: 800/1500
+  progress: 850/1500
+  progress: 900/1500
+  progress: 950/1500
+  progress: 1000/1500
+  progress: 1050/1500
+  progress: 1100/1500
+  progress: 1150/1500
+  progress: 1200/1500
+  progress: 1250/1500
+  progress: 1300/1500
+  progress: 1350/1500
+  progress: 1400/1500
+  progress: 1450/1500
+  progress: 1500/1500
+
+=== Results ===
+Successful: 1500
+Errors:     0
+Duration:   2.28s
+Throughput: 658.52 req/s
+
+--- TTFT / first response byte ---
+Mean:  1546.17ms
+P50:   1805.06ms
+P90:   2122.23ms
+P95:   2154.05ms
+P99:   2195.78ms
+Min:   141.47ms
+Max:   2224.03ms
+
+--- Total request latency ---
+Mean:  1561.13ms
+P50:   1805.08ms
+P90:   2129.43ms
+P95:   2167.33ms
+P99:   2246.15ms
+Min:   185.84ms
+Max:   2275.23ms
+
+--- Key EPP Metrics ---
+inference_extension_plugin_duration_seconds_sum{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 0.0066797470000000145
+inference_extension_plugin_duration_seconds_count{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 3301
+inference_extension_plugin_duration_seconds_sum{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 0.024673888000000053
+inference_extension_plugin_duration_seconds_count{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 3301
+inference_extension_plugin_duration_seconds_sum{extension_point="ProcessProfilesResults",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 0.0013828740000000012
+inference_extension_plugin_duration_seconds_count{extension_point="ProcessProfilesResults",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 3301
+inference_extension_plugin_duration_seconds_sum{extension_point="ProfilePicker",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 0.0014986069999999908
+inference_extension_plugin_duration_seconds_count{extension_point="ProfilePicker",plugin_name="single-profile-handler",plugin_type="single-profile-handler"} 6602
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="kv-cache-utilization-scorer",plugin_type="kv-cache-utilization-scorer"} 0.0022151270000000025
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="kv-cache-utilization-scorer",plugin_type="kv-cache-utilization-scorer"} 3301
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 0.009044356000000016
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 3301
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 0.0026175409999999997
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 3301
+inference_extension_scheduler_e2e_duration_seconds_sum 0.11653035799999979
+inference_extension_scheduler_e2e_duration_seconds_count 3301
+inference_objective_request_duration_seconds_sum{model_name="Qwen/Qwen3-32B",target_model_name="Qwen/Qwen3-32B"} 2002.5056444680008
+inference_objective_request_duration_seconds_count{model_name="Qwen/Qwen3-32B",target_model_name="Qwen/Qwen3-32B"} 3301

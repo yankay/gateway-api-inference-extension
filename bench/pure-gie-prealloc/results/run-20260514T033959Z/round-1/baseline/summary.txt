@@ -1,0 +1,8 @@
+arm=baseline
+image_tag=baseline
+round_index=1
+ttft_means_ms: 1282.76 1295.21
+ttft_median_ms: 1288.99
+process_flat_pct: 29.41
+process_cum_pct: 69.42
+total_alloc_after:

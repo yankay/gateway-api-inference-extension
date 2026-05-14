@@ -1,0 +1,8 @@
+arm=prealloc
+image_tag=prealloc
+round_index=2
+ttft_means_ms: 1177.35 1363.82
+ttft_median_ms: 1270.59
+process_flat_pct: 12.80
+process_cum_pct: 65.01
+total_alloc_after:

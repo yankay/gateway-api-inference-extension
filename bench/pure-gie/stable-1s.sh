@@ -127,7 +127,11 @@ ensure_pf() {
   fi
   echo "  port ${local_port} not answering -> starting kubectl port-forward (${target})"
   # shellcheck disable=SC2086 # target intentionally word-split
-  kubectl port-forward ${target} </dev/null >"${logf}" 2>&1 &
+  # --address localhost ensures kubectl binds BOTH 127.0.0.1 and [::1];
+  # without it kubectl picks one family and curl/nc on the other side
+  # silently misses the listener (observed: bind to [::1] only, while
+  # `nc -z localhost` resolves to 127.0.0.1 and reports the port dead).
+  kubectl port-forward --address localhost ${target} </dev/null >"${logf}" 2>&1 &
   PF_PIDS+=("$!")
   # Wait up to 10s for the forward to come up.
   for _ in $(seq 1 20); do

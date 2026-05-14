@@ -1,0 +1,190 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2026-05-14T03:40:01Z"
+    generateName: vllm-qwen3-32b-epp-5b8b9f445-
+    labels:
+      inference.networking.k8s.io/igw-mode: inferencepool
+      inferencepool: vllm-qwen3-32b-epp
+      pod-template-hash: 5b8b9f445
+    name: vllm-qwen3-32b-epp-5b8b9f445-mhs89
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: vllm-qwen3-32b-epp-5b8b9f445
+      uid: 0c0e4cdf-decf-467f-9612-6a0343e3baa0
+    resourceVersion: "126370"
+    uid: 7d151fa6-f13d-4039-ae81-19b6a24fd95c
+  spec:
+    containers:
+    - args:
+      - --pool-name
+      - vllm-qwen3-32b
+      - --pool-namespace
+      - default
+      - --pool-group
+      - inference.networking.k8s.io
+      - --zap-encoder
+      - json
+      - --config-file
+      - /config/default-plugins.yaml
+      - --v
+      - "1"
+      - --tracing=false
+      - --metrics-endpoint-auth=false
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: POD_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.name
+      image: docker.io/library/epp:baseline
+      imagePullPolicy: Never
+      livenessProbe:
+        failureThreshold: 3
+        grpc:
+          port: 9003
+          service: inference-extension
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: epp
+      ports:
+      - containerPort: 9002
+        name: grpc
+        protocol: TCP
+      - containerPort: 9003
+        name: grpc-health
+        protocol: TCP
+      - containerPort: 9090
+        name: metrics
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        grpc:
+          port: 9003
+          service: inference-extension
+        periodSeconds: 2
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          memory: 16Gi
+        requests:
+          cpu: "2"
+          memory: 4Gi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /config
+        name: plugins-config-volume
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-mns2t
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gie-bench-control-plane
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: vllm-qwen3-32b-epp
+    serviceAccountName: vllm-qwen3-32b-epp
+    terminationGracePeriodSeconds: 130
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - configMap:
+        defaultMode: 420
+        name: vllm-qwen3-32b-epp
+      name: plugins-config-volume
+    - name: kube-api-access-mns2t
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-05-14T03:40:02Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-05-14T03:40:01Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-05-14T03:40:02Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-05-14T03:40:02Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-05-14T03:40:01Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://c5e82b38ee9dc9272e7d58e117e139ecd5af4149edb57655027925ab7d481e3d
+      image: docker.io/library/epp:baseline
+      imageID: docker.io/library/import-2026-05-13@sha256:0255880539067bdcae186db4598da5e4b2117896e246faf6753502215615a673
+      lastState: {}
+      name: epp
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-05-14T03:40:02Z"
+      volumeMounts:
+      - mountPath: /config
+        name: plugins-config-volume
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-mns2t
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 172.22.0.4
+    hostIPs:
+    - ip: 172.22.0.4
+    phase: Running
+    podIP: 10.244.0.117
+    podIPs:
+    - ip: 10.244.0.117
+    qosClass: Burstable
+    startTime: "2026-05-14T03:40:01Z"
+kind: List
+metadata:
+  resourceVersion: ""

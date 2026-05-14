@@ -1,0 +1,5 @@
+round	arm	tag	ttft_median_ms	process_flat_pct	process_cum_pct	total_alloc
+1	baseline	baseline	1288.99	29.41	69.42
+1	prealloc	prealloc	1301.92	13.61	63.08
+2	prealloc	prealloc	1270.59	12.80	65.01
+2	baseline	baseline	1372.29	30.59	70.36
