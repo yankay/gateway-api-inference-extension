@@ -1,0 +1,36 @@
+# Benchmark EPP config - mirrors the production config used in the TTFT analysis.
+# always-disagg-pd-decider forces every request through P/D disaggregation (threshold 0).
+apiVersion: llm-d.ai/v1alpha1
+kind: EndpointPickerConfig
+plugins:
+- type: disagg-headers-handler
+- type: approx-prefix-cache-producer
+  parameters:
+    autoTune: false
+    blockSizeTokens: 256
+    maxPrefixBlocksToMatch: 120
+    lruCapacityPerServer: 31250
+- type: prefix-cache-scorer
+- type: prefill-filter
+- type: decode-filter
+- type: max-score-picker
+- type: queue-scorer
+- type: always-disagg-pd-decider
+- type: disagg-profile-handler
+  parameters:
+    deciders:
+      prefill: always-disagg-pd-decider
+schedulingProfiles:
+- name: prefill
+  plugins:
+  - pluginRef: prefill-filter
+  - pluginRef: max-score-picker
+  - pluginRef: prefix-cache-scorer
+    weight: 1
+  - pluginRef: queue-scorer
+    weight: 9
+- name: decode
+  plugins:
+  - pluginRef: decode-filter
+  - pluginRef: max-score-picker
+  - pluginRef: queue-scorer

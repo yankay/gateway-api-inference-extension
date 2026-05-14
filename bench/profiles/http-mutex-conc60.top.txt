@@ -1,0 +1,38 @@
+File: epp
+Build ID: 3a1a7c40ecbd67f5a3eb7d52a629d60cc74b8cb2
+Type: delay
+Time: 2026-05-13 08:15:32 UTC
+Showing nodes accounting for 412.96ms, 92.44% of 446.75ms total
+Dropped 387 nodes (cum <= 2.23ms)
+Showing top 30 nodes out of 166
+      flat  flat%   sum%        cum   cum%
+  279.39ms 62.54% 62.54%   279.39ms 62.54%  runtime.unlock (partial-inline)
+         0     0% 62.54%   182.37ms 40.82%  runtime.systemstack
+         0     0% 62.54%   128.21ms 28.70%  runtime.mallocgc
+         0     0% 62.54%   124.06ms 27.77%  runtime.(*mheap).allocSpan
+         0     0% 62.54%   123.07ms 27.55%  runtime.(*mheap).alloc
+         0     0% 62.54%   123.07ms 27.55%  runtime.(*mheap).alloc.func1
+         0     0% 62.54%   112.28ms 25.13%  github.com/envoyproxy/go-control-plane/envoy/service/ext_proc/v3._ExternalProcessor_Process_Handler
+         0     0% 62.54%   112.28ms 25.13%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/handlers.(*StreamingServer).Process
+         0     0% 62.54%   112.28ms 25.13%  google.golang.org/grpc.(*Server).handleStream
+         0     0% 62.54%   112.28ms 25.13%  google.golang.org/grpc.(*Server).processStreamingRPC
+         0     0% 62.54%   112.28ms 25.13%  google.golang.org/grpc.(*Server).serveStreams.func2.1
+   70.82ms 15.85% 78.39%   105.45ms 23.60%  sync.(*RWMutex).Unlock
+         0     0% 78.39%   105.12ms 23.53%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*indexer).Add
+         0     0% 78.39%   105.12ms 23.53%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*indexer).Add.deferwrap1
+         0     0% 78.39%   105.12ms 23.53%  github.com/llm-d/llm-d-inference-scheduler/pkg/epp/framework/plugins/requestcontrol/dataproducer/approximateprefix.(*prepareData).PreRequest.func1
+         0     0% 78.39%   105.12ms 23.53%  sync.(*WaitGroup).Go.func1
+         0     0% 78.39%    84.08ms 18.82%  runtime.mallocgcLarge
+         0     0% 78.39%    81.60ms 18.26%  runtime.(*mcache).allocLarge
+   62.75ms 14.05% 92.44%    62.75ms 14.05%  sync.(*Mutex).Unlock (partial-inline)
+         0     0% 92.44%    62.05ms 13.89%  runtime.schedule
+         0     0% 92.44%    61.70ms 13.81%  runtime.growslice
+         0     0% 92.44%    61.34ms 13.73%  runtime.findRunnable
+         0     0% 92.44%    60.12ms 13.46%  runtime.mcall
+         0     0% 92.44%    49.64ms 11.11%  runtime.gcBgMarkWorker
+         0     0% 92.44%    48.53ms 10.86%  runtime.park_m
+         0     0% 92.44%    45.10ms 10.10%  runtime.gcMarkDone
+         0     0% 92.44%    44.67ms 10.00%  runtime.forEachP (inline)
+         0     0% 92.44%    44.67ms 10.00%  runtime.forEachPInternal
+         0     0% 92.44%    43.40ms  9.71%  runtime.goschedImpl
+         0     0% 92.44%    41.48ms  9.28%  runtime.(*mcache).nextFree

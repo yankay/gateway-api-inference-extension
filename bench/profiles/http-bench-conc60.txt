@@ -1,0 +1,62 @@
+=== HTTP Benchmark ===
+url=http://localhost:30080/v1/completions host=bench.local concurrency=60 total=450 input-chars=220000 body-bytes=220067 stream=false
+
+  progress: 50/450
+  progress: 100/450
+  progress: 150/450
+  progress: 200/450
+  progress: 250/450
+  progress: 300/450
+  progress: 350/450
+  progress: 400/450
+  progress: 450/450
+
+=== Results ===
+Successful: 450
+Errors:     0
+Duration:   8.87s
+Throughput: 50.71 req/s
+
+--- TTFT / first response byte ---
+Mean:  1108.77ms
+P50:   1147.59ms
+P90:   1230.88ms
+P95:   1260.36ms
+P99:   1303.30ms
+Min:   190.53ms
+Max:   1338.88ms
+
+--- Total request latency ---
+Mean:  1109.11ms
+P50:   1147.78ms
+P90:   1231.12ms
+P95:   1260.59ms
+P99:   1303.57ms
+Min:   190.99ms
+Max:   1339.00ms
+
+--- Key EPP Metrics ---
+inference_extension_plugin_duration_seconds_sum{extension_point="Filter",plugin_name="decode-filter",plugin_type="by-label"} 0.0018152780000000042
+inference_extension_plugin_duration_seconds_count{extension_point="Filter",plugin_name="decode-filter",plugin_type="by-label"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="Filter",plugin_name="prefill-filter",plugin_type="by-label"} 0.0013968850000000007
+inference_extension_plugin_duration_seconds_count{extension_point="Filter",plugin_name="prefill-filter",plugin_type="by-label"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 0.18807065000000012
+inference_extension_plugin_duration_seconds_count{extension_point="Picker",plugin_name="max-score-picker",plugin_type="max-score-picker"} 3772
+inference_extension_plugin_duration_seconds_sum{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 0.019020622999999976
+inference_extension_plugin_duration_seconds_count{extension_point="PreRequest",plugin_name="approx-prefix-cache-producer",plugin_type="approx-prefix-cache-producer"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="PreRequest",plugin_name="disagg-headers-handler",plugin_type="disagg-headers-handler"} 0.010395428000000005
+inference_extension_plugin_duration_seconds_count{extension_point="PreRequest",plugin_name="disagg-headers-handler",plugin_type="disagg-headers-handler"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="PreRequest",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 0.009975904000000018
+inference_extension_plugin_duration_seconds_count{extension_point="PreRequest",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="ProcessProfilesResults",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 0.006137276999999992
+inference_extension_plugin_duration_seconds_count{extension_point="ProcessProfilesResults",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="ProfilePicker",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 0.0371101820000001
+inference_extension_plugin_duration_seconds_count{extension_point="ProfilePicker",plugin_name="disagg-profile-handler",plugin_type="disagg-profile-handler"} 5658
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 0.004660314999999998
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="prefix-cache-scorer",plugin_type="prefix-cache-scorer"} 1886
+inference_extension_plugin_duration_seconds_sum{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 0.005130754000000014
+inference_extension_plugin_duration_seconds_count{extension_point="Scorer",plugin_name="queue-scorer",plugin_type="queue-scorer"} 3772
+inference_extension_scheduler_e2e_duration_seconds_sum 2.963816893000003
+inference_extension_scheduler_e2e_duration_seconds_count 1886
+inference_objective_request_duration_seconds_sum{model_name="bench-model",target_model_name="bench-model"} 2844.483557619005
+inference_objective_request_duration_seconds_count{model_name="bench-model",target_model_name="bench-model"} 1886
